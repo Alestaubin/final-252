@@ -25,13 +25,15 @@
 - **BFS**: $O(|V| + |E|)$
 - Successor in **BST**: $O(h)$, where h is the height 
 - Browsing in **BST**: $O(h+k)$, where k is the number of steps to browse
-- **Ford-Fulkerson** (find max flow): $O(|V|\times val(f))$ if the weights are integers
-- **Edmonds-Karp** (find max flow using BFS to find augmenting paths): O(|E|^2 * |V|)
 - **Dijkstra's** for shortest path: $O(|E| + |V| \log|V|)$
 - **Prim-Dijkstra's** for **MST**: $O(|E| + |V| \log|V|)$
 - **Kruskal's** for **MST**: $O(|E|\log|E|)$
 - **Boruval-Choquet** for **MST**: $O(|E|\log |V|)$ 
-- **Floyd-Warshall** for all pairs shortest distance: $O(|V|^3)$
+- **Floyd-Warshall** DP solution for all pairs shortest distance: $O(|V|^3)$
+- **2-Approximation of TSP**: find the MST, then DFS through it and order the nodes in their discovery time. Complexity is $O(|E| + |V|) + O(\text{time to find MST})$ 
+- **Find SCCs**: run DFS, save finishing times of each node $O(|V| +|E|)$. Compute $G^T$ by reversing all edges, $O(|V| +|E|)$. Run DFS on $G^T$, in decreasing order of the finishing times found above, save the SCC's $O(|V| +|E|)$ 
+- **Ford-Fulkerson** (find max flow): $O(|V|\times val(f))$ if the weights are integers
+- **Edmonds-Karp** (find max flow using BFS to find augmenting paths): O(|E|^2 * |V|)
 
 
 ### Sorting algorithms
