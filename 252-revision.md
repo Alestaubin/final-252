@@ -17,22 +17,32 @@
 - **RB trees**. Inserting and deleting are both $O(\log n)$. There are at most $2\log(n+1)$ levels in the tree, so finding the place to insert/delete is $O(\log n)$, then fixing the tree is $O(\log n)$ for case 1, $O(1)$ for cases 2,3.
 - Construction of **RB tree** from sorted list is $O(n)$
 - **KMP** for pattern matching: building magic table O(m) where m is the size of the pattern we're searching, KMP is $O(n)$, where n is the length of the string in which we're searching the pattern. 
-- **Hu-tucker** (Greedy to find Huffman code): O(nlogn)
-- **Floyd-Warshall** for all pairs shortest distance: $O(|V|^3)$
+- **Hu-tucker** (Greedy to find Huffman code): $O(n \log n)$
+
+### Graph algorithms:
+- **DFS**: $O(|V| + |E|)$
+- Find **Euler Tour**: $O(|V| + |E|)$
+- **BFS**: $O(|V| + |E|)$
 - Successor in **BST**: $O(h)$, where h is the height 
 - Browsing in **BST**: $O(h+k)$, where k is the number of steps to browse
 - **Ford-Fulkerson** (find max flow): $O(|V|\times val(f))$ if the weights are integers
 - **Edmonds-Karp** (find max flow using BFS to find augmenting paths): O(|E|^2 * |V|)
+- **Dijkstra's** for shortest path: $O(|E| + |V| \log|V|)$
+- **Prim-Dijkstra's** for **MST**: $O(|E| + |V| \log|V|)$
+- **Kruskal's** for **MST**: 
+- **Floyd-Warshall** for all pairs shortest distance: $O(|V|^3)$
+
 
 ### Sorting algorithms
 - **MergeSort**: $T(n) = (n-1) + 2 T(n/2) ~= n + 2 T(n/2) = O(n \log n)$
-- **QuickSort** (equivalent to building a BST): $O(2n\times \ln(n)) ~= O(1.39 n \log n)$
-- **HeapSort**: BUILDHEAP is $O(4n)$, DELETEMIN is O(logn), as it performs at most 2logn comparisons, so the overall time complexity is O(nlogn), as we must fix the heap n times. The number of comparisons is 4n+ 2nlogn.
+- **QuickSort** (equivalent to building a BST): $O(2n\times \ln(n)) \approx O(1.39 n \log n)$
+- **HeapSort**: BUILDHEAP is $O(4n)$, DELETEMIN is $O(\log n)$, as it performs at most $2 \log n$ comparisons, so the overall time complexity is $O(n \log n)$, as we must fix the heap n times. The number of comparisons is $4n+ 2n\log n$.
 - **Tournament Tree Sort**: BUILDTOURNAMENT takes n-1 comparisons on an array of length n. Accessing smallest element in the tournament tree is O(1), as root has a pointer to it. Then, set smallest element key to infinity and fix the tree, this takes $O(\log n)$. The overall number of comparisons is therefore less than $n + n \log(2n-1)$, as a tournament tree has 2n-1 nodes. This is much better than HeapSort.
 
 ### things 
 - Kraft's inequality says that in an alphabet of size r, the sum of r raised to the negative power of each code word length is less than 1. If this fact holds with strict inequality, the code is reduntant, if equality it is optimal, if not, then it is not uniquely decodable
-- If $E = \sum p_i \log_2 (1/p_i)$ is the entropy, then $ E\leq avg length in Huffman code \leq 1 + E$
+- If $E = \sum p_i \log_2 (1/p_i)$ is the entropy, then $E\leq \text{avg length in Huffman code}\leq 1 + E$
+- **Fibonacci Heap**: Insert $O(1)$, DeleteMin $O(\log_2 n)$, GetMin $O(1)$, DecreaseKey $O(1)$
 
 ## To Do:
 - Review KMP algorithm (lecture 18)
