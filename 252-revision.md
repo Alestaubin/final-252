@@ -32,7 +32,7 @@
 - **Floyd-Warshall** DP solution for all pairs shortest distance: $O(|V|^3)$
 - **2-Approximation of TSP**: find the MST, then DFS through it and order the nodes in their discovery time. Complexity is $O(|E| + |V|) + O(\text{time to find MST})$ 
 - **Find SCCs**: run DFS, save finishing times of each node $O(|V| +|E|)$. Compute $G^T$ by reversing all edges, $O(|V| +|E|)$. Run DFS on $G^T$, in decreasing order of the finishing times found above, save the SCC's $O(|V| +|E|)$ 
-- **Ford-Fulkerson** (find max flow): $O(|V|\times val(f))$ if the weights are integers
+- **Ford-Fulkerson** (find max flow): finding an augmenting path is $O(|E|\times val(f))$ if the weights are integers.
 - **Edmonds-Karp** (find max flow using BFS to find augmenting paths): O(|E|^2 * |V|)
 
 
