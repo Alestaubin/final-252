@@ -29,7 +29,8 @@
 - **Edmonds-Karp** (find max flow using BFS to find augmenting paths): O(|E|^2 * |V|)
 - **Dijkstra's** for shortest path: $O(|E| + |V| \log|V|)$
 - **Prim-Dijkstra's** for **MST**: $O(|E| + |V| \log|V|)$
-- **Kruskal's** for **MST**: 
+- **Kruskal's** for **MST**: $O(|E|\log|E|)$
+- **Boruval-Choquet** for **MST**: $O(|E|\log |V|)$ 
 - **Floyd-Warshall** for all pairs shortest distance: $O(|V|^3)$
 
 
